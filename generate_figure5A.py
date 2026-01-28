@@ -1,8 +1,8 @@
 ## how long should the model run in seconds:
-model_runtime = 4
+model_runtime = 20
 ## this, parameter, step in the range of voltages to plot, controls
 ## the resolution, or smoothness of the curve
-voltage_step = 5
+voltage_step = 1
 
 from parameters.sets import single_neuron_stimulation_clamped
 from models.shouval_clamped_voltage import *
@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 i_pairs = [(0.25,0.75),(0.5,0.5),(0.75,0.25)]
 
-V_vals = np.arange(-70, -5, 4) * mV
+V_vals = np.arange(-70, -5, voltage_step) * mV
 
 plt.figure(figsize = (6,4))
 
