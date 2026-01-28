@@ -14,7 +14,7 @@ dts = np.arange(-100, 200, 5) * ms
 ### accumulate final weight values for each iteration
 W_final = []
 
-for i, dt in enumerate(dts, start=1):
+for dt in dts:
     pre_times,post_times = precompute_stdp_times(dt,
                                         n_pairs=100,
                                         freq=1.0)
@@ -25,8 +25,7 @@ for i, dt in enumerate(dts, start=1):
                      T=T,
                      params_override={"s_value": 1*mV})
     W_final.append(M.Wnorm[0][-1])  # or M.W[0][-1]/M.W0[0]
-    np.shape(dts)[0]
-    print(f"[{i}/{np.shape(dts)[0]}] dt={dt}  Wnorm_final={M.Wnorm[0][-1]}")
+    print("dt=", float(dt/ms), "W_norm=", M.Wnorm[0][-1])
 
 plt.figure(figsize = (6,4))
 plt.plot(dts/ms, W_final[0:60],color="blue")
