@@ -18,8 +18,8 @@ W_inf = []
 
 for Vi in V_vals:
     M = run_protocol(
-        pre_times = precompute_train_100_times()[0],
-        post_times = precompute_train_100_times()[1],
+        pre_times = precompute_pre_train_100_times(N=100)[0],
+        post_times = precompute_pre_train_100_times(N=100)[1],
         parameters = single_neuron_stimulation_clamped(),
         T = model_runtime*second,
         params_override = {"Vhold": Vi}
