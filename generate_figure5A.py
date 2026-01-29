@@ -35,7 +35,7 @@ for m, n in i_pairs:
         print("V=", float(Vi/mV), "Ca_max=", Ca_max, "W_norm=", M.Wnorm[0][-1])
         print(Vi)
         W_inf.append(M.Wnorm[0][-1])
-    plt.plot(V_vals/mV, W_inf,label=f"If = {m}")
+    plt.plot(V_vals/mV, W_inf,label=rf"$I_{{f}} = {m}$")
     
 plt.legend()
 plt.xlim(-70, -10)
