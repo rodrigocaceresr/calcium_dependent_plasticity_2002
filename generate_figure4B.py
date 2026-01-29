@@ -1,7 +1,7 @@
 ## how long should the model run in seconds:
 ## 100s will take a long time but captures better the final synaptic weight
 ## and replicates better the plot of the paper
-model_runtime = 0.5
+model_runtime = 100
 
 from parameters.sets import single_neuron_stimulation
 from models.shouval_free_voltage import *
